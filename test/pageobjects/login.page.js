@@ -1,31 +1,27 @@
 const Page = require('./page');
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class LoginPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
-    get inputUsername () { return $('#username') }
-    get inputPassword () { return $('#password') }
+
+    get inputEmail () { return $('#normal_login_email') }
+    get inputPassword () { return $('#normal_login_password') }
+    get btnLogIn () { return $('button[type="submit"]') }
+    get dropDownCountry () { return $('.ant-select-selector')}
+    get dropDownUS () { return $('[title="United States"]')}
+    get inputPhone () { return $('#user_login_phone')}
     get btnSubmit () { return $('button[type="submit"]') }
 
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
+    get btnSkip() { return $('button[type="button"]')}
     login (username, password) {
-        this.inputUsername.setValue(username);
+        this.inputEmail.setValue(username);
         this.inputPassword.setValue(password);
-        this.btnSubmit.click(); 
+        this.btnLogIn.click();
     }
 
     /**
      * overwrite specifc options to adapt it to page object
      */
-    open () {
-        return super.open('login');
+    open (path) {
+        return super.open('/user/login');
     }
 }
 

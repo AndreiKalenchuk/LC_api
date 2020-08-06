@@ -5,7 +5,12 @@ class LoginPage extends Page {
     get inputEmail () { return $('#normal_login_email') }
     get inputPassword () { return $('#normal_login_password') }
     get btnLogIn () { return $('button[type="submit"]') }
+    get dropDownCountry () { return $('.ant-select-selector')}
+    get dropDownUS () { return $('[title="United States"]')}
+    get inputPhone () { return $('#user_login_phone')}
+    get btnSubmit () { return $('button[type="submit"]') }
 
+    get btnSkip() { return $('button[type="button"]')}
     login (username, password) {
         this.inputEmail.setValue(username);
         this.inputPassword.setValue(password);

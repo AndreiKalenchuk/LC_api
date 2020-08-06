@@ -34,8 +34,10 @@ const user = {
   learner: {
     email: "learner@qa6.us",
     password: "learner",
+    newPassword: "learner",
     firstName: "LearnerFirst",
     lastName: "LearnerLast",
+    id: "5f1f86b986482d011633f20c",
   },
 };
 export default user;

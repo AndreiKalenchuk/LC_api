@@ -17,8 +17,8 @@ class LoginPage extends Page {
         this.btnLogIn.click();
     }
 
-    /**
-     * overwrite specifc options to adapt it to page object
+    /*
+      overwrite specifc options to adapt it to page object
      */
     open (path) {
         return super.open('/user/login');

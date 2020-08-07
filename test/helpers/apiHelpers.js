@@ -27,14 +27,3 @@ export function apiUserLogin(userRole) {
     .then((res) => res)
     .catch((error) => error);
 }
-
-
-
-
-
-
-
-
-
-
-

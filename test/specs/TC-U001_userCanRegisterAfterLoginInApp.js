@@ -2,14 +2,15 @@ import { apiUserRegister } from "../helpers/apiHelpers";
 import user from "../testData/users";
 import LoginPage from "../pageobjects/login.page";
 import ProfilePage from "../pageobjects/profile.page";
-import {clearValue} from "../helpers/helpers";
+import { clearValue } from "../helpers/helpers";
 
 let newUserEmail = null;
 let newUserPassword = null;
 
 describe("TC-U001 New user can Login after registration", () => {
   it("register new user api", async () => {
-    await apiUserRegister(user.newUser);
+    const res = await apiUserRegister(user.newUser);
+    expect(res.status).eq(201);
   });
 
   it("new user open login page", () => {
@@ -22,8 +23,9 @@ describe("TC-U001 New user can Login after registration", () => {
     LoginPage.inputEmail.setValue(user.newUser.email);
     LoginPage.inputPassword.setValue(user.newUser.password);
     LoginPage.btnLogIn.click();
-    browser.waitUntil(() => LoginPage.dropDownCountry.isExisting(),
-        "No redirect to second step"
+    browser.waitUntil(
+      () => LoginPage.dropDownCountry.isExisting(),
+      "No redirect to second step"
     );
   });
 

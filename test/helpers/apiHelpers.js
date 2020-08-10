@@ -14,6 +14,7 @@ export async function apiUserRegister(user) {
       englishLevel: user.englishLevel,
       countryName: user.countryName,
     })
+
     .then((res) => res)
     .catch((error) => error);
 }

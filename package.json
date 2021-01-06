@@ -25,7 +25,7 @@
     "wdio-chromedriver-service": "^6.0.3"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chai": "^4.2.0",
     "faker": "^4.1.0",
     "prettier": "^2.0.5"
